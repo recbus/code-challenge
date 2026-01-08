@@ -45,7 +45,7 @@ the test suite.
 - We have implemented an efficient solution in less than one hundred lines of documented Clojure code with no additional dependencies.  
 It takes about two seconds to complete the test suite.
 - We have implemented an extremely space- and time-efficient solution in around 300 lines of bespoke and performance-tuned Clojure 
-code with no additional dependencies. It takes about 6µs to complete the test suite.
+code with no additional dependencies. It takes about 200µs to complete the test suite.
 
 (Performance was measured on a 2023 MacBook Pro with an Apple M2 Pro processor and 32G of RAM using clojure 1.11.1 on temurin-17)
 
