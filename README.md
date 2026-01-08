@@ -37,11 +37,17 @@ You may add additional tests in separate namespaces.  You may introduce addition
 libraries to do the heavy lifting are appropriate.
 
 ### Scale of the Challenge
-A performance-optimized solution to the problem is difficult.  We have implemented a correct solution in less than fifty lines of 
-documented Clojure code with no additional dependencies but leveraging many capabilities of the underlying `org.threeten.extra/LocalDateRange`
-class.  It takes about 15 seconds to complete the test suite on a 2023 MacBook Pro with an Apple M2 Pro processor and 32G of RAM.  We have
-also implemented an efficient solution in less than one hundred lines of documented Clojure code with no additional dependencies.  It takes
-about two seconds to complete the test suite on the same machine and most of that time is spent loading Clojure itself.
+A performance-optimized solution to the problem is difficult:
+
+- We have implemented a correct solution in less than fifty lines of documented Clojure code with no additional dependencies but 
+leveraging many capabilities of the underlying `org.threeten.extra/LocalDateRange` class.  It takes about 15 seconds to complete 
+the test suite.
+- We have implemented an efficient solution in less than one hundred lines of documented Clojure code with no additional dependencies.  
+It takes about two seconds to complete the test suite.
+- We have implemented an extremely space- and time-efficient solution in around 300 lines of bespoke and performance-tuned Clojure 
+code with no additional dependencies. It takes about 6µs to complete the test suite.
+
+(Performance was measured on a 2023 MacBook Pro with an Apple M2 Pro processor and 32G of RAM using clojure 1.11.1 on temurin-17)
 
 ### Hints, maybe helpful
 Our simple solution evolved from the observation that a LocalDateRange object can be represented (inefficiently) by a sequence of 
@@ -55,9 +61,9 @@ Before coding, you should be comfortable with the concept of a [time interval](h
 more specifically a (local) date interval as implemented by
 the [backing Java library we use](https://www.threeten.org/threeten-extra/apidocs/org.threeten.extra/org/threeten/extra/LocalDateRange.html).
 
-Our efficient solution uses the properties of mathematical intervals (not necessarily date intervals).  Consequently, the first and last 
+One efficient solution uses the properties of mathematical intervals (not necessarily date intervals).  Consequently, the first and last 
 operations in this solution convert from LocalDateRange objects to Clojure data and from Clojure data back to LocalDateRange objects, 
-respectively.  The necessary computational complexity of this alogrithm is high and the code reflects it.
+respectively.  The necessary computational complexity of this algorithm is high and the code reflects it.
 
 ### Submitting your response
 This git repository is the entire input you will need for the Sun Tribe code challenge.  Your submission should be a modified version 
