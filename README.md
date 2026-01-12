@@ -10,7 +10,7 @@ a set with two intervals, one representing the date range January 2-7, 2024 and 
 Stated using algebraic symbols and leveraging the ISO representation of date intervals:
 
 ```
-#{"2024-01-01/P1M"} - #{"2024-08-01/P7D" "2024-01-01/P1D"} = #{"2024-01-02/P6D" "2024-01-15/P17D"}`
+#{"2024-01-01/P1M"} - #{"2024-01-08/P7D" "2024-01-01/P1D"} = #{"2024-01-02/P6D" "2024-01-15/P17D"}`
 ```
 
 ### Context
